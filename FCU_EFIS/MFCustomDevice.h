@@ -1,12 +1,11 @@
 #pragma once
 
 #include <Arduino.h>
-#include "MyCustomClass.h"
+#include "FCU_EFIS.h"
 
 // only one entry required if you have only one custom device
 enum {
-    MY_CUSTOM_DEVICE_1 = 1,
-    MY_CUSTOM_DEVICE_2
+    FCU_EFIS_DEVICE = 1
 };
 class MFCustomDevice
 {
@@ -20,7 +19,6 @@ public:
 private:
     bool           getStringFromEEPROM(uint16_t addreeprom, char *buffer);
     bool           _initialized = false;
-    MyCustomClass *_mydevice;
-    uint8_t        _pin1, _pin2, _pin3;
+    FCU_EFIS       *_my_FCU_EFIS;
     uint8_t        _customType = 0;
 };

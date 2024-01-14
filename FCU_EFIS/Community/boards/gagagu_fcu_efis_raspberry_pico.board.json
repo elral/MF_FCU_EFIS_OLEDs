@@ -17,35 +17,28 @@
     "Info": {
       "CanInstallFirmware": true,
       "CanResetBoard": true,
-      "FirmwareBaseName": "mobiflight_template_raspberrypico",
+      "FirmwareBaseName": "gagagu_fcu_efis_raspberrypico",
       "FirmwareExtension": "uf2",
-      "FriendlyName": "MobiFlight Template RaspiPico",
-      "LatestFirmwareVersion": "0.0.1",
-      "MobiFlightType": "Mobiflight Template RaspiPico",
+      "FriendlyName": "Gagagu FCU/EFIS RaspiPico",
+      "LatestFirmwareVersion": "2.5.0",
+      "MobiFlightType": "Gagagu FCU/EFIS RaspiPico",
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",
       "CustomDeviceTypes": [
-        "MOBIFLIGHT_TEMPLATE",
-        "MOBIFLIGHT_TEMPLATE2"
-      ],
-      "Community": {
-        "Project": "Your Project",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
-      }
+        "GAGAGU_FCU-EFIS"
+      ]
     },
     "ModuleLimits": {
       "MaxAnalogInputs": 3,
-      "MaxInputShifters": 6,
+      "MaxInputShifters": 4,
       "MaxButtons": 26,
-      "MaxEncoders": 13,
+      "MaxEncoders": 8,
       "MaxLcdI2C": 2,
-      "MaxLedSegments": 6,
+      "MaxLedSegments": 4,
       "MaxOutputs": 26,
       "MaxServos": 8,
-      "MaxShifters": 6,
+      "MaxShifters": 4,
       "MaxSteppers": 6,
-      "MaxInputMultiplexer": 6,
+      "MaxInputMultiplexer": 4,
       "MaxCustomDevices": 5
     },
     "Pins": [

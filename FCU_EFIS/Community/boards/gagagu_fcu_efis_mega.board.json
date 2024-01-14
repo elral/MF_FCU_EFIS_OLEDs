@@ -35,35 +35,28 @@
       "CanInstallFirmware": true,
       "CanResetBoard": true,
       "DelayAfterFirmwareUpdate": 0,
-      "FirmwareBaseName": "mobiflight_template_mega",
+      "FirmwareBaseName": "gagagu_fcu_efis_mega",
       "FirmwareExtension": "hex",
-      "LatestFirmwareVersion": "0.0.1",
-      "FriendlyName": "Mobiflight Template Mega",
-      "MobiFlightType": "Mobiflight Template Mega",
+      "LatestFirmwareVersion": "2.5.0",
+      "FriendlyName": "Gagagu FCU/EFIS Mega",
+      "MobiFlightType": "Gagagu FCU/EFIS Mega",
       "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
       "CustomDeviceTypes": [
-        "MOBIFLIGHT_TEMPLATE",
-        "MOBIFLIGHT_TEMPLATE2"
-      ],
-      "Community": {
-        "Project": "Your Project",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
-      }
+        "GAGAGU_FCU-EFIS"
+      ]
     },
     "ModuleLimits": {
       "MaxAnalogInputs": 16,
-      "MaxInputShifters": 6,
+      "MaxInputShifters": 4,
       "MaxButtons": 68,
       "MaxEncoders": 20,
       "MaxLcdI2C": 2,
-      "MaxLedSegments": 6,
-      "MaxOutputs": 68,
-      "MaxServos": 12,
-      "MaxShifters": 6,
+      "MaxLedSegments": 4,
+      "MaxOutputs": 40,
+      "MaxServos": 10,
+      "MaxShifters": 4,
       "MaxSteppers": 10,
-      "MaxInputMultiplexer": 6,
+      "MaxInputMultiplexer": 4,
       "MaxCustomDevices": 5
     },
     "Pins": [
