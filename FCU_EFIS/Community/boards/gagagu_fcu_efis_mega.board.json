@@ -43,7 +43,13 @@
       "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
       "CustomDeviceTypes": [
         "GAGAGU_FCU-EFIS"
-      ]
+      ],
+      "Community": {
+        "Project": "Gagagu_FCU_EFIS",
+        "Website": "https://YourWebsite.com",
+        "Docs": "https://YourWebsite.com",
+        "Support": "https://YourWebsite.com"
+      }
     },
     "ModuleLimits": {
       "MaxAnalogInputs": 16,

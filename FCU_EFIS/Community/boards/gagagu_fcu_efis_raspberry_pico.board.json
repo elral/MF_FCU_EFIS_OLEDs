@@ -25,7 +25,13 @@
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",
       "CustomDeviceTypes": [
         "GAGAGU_FCU-EFIS"
-      ]
+      ],
+      "Community": {
+        "Project": "Gagagu_FCU_EFIS",
+        "Website": "https://YourWebsite.com",
+        "Docs": "https://YourWebsite.com",
+        "Support": "https://YourWebsite.com"
+      }
     },
     "ModuleLimits": {
       "MaxAnalogInputs": 3,
