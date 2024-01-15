@@ -7,8 +7,8 @@ Only the integration into a community device is added.
 
 The goal of this project is to create an A320 Efis and Fcu controlled by Mobiflight.
 
-## the new Idea
-With the new (in beta yet) Mobiflight feature for community devices a new one is set up to add all required functions to support OLED displays.
+## The Idea
+With the new Mobiflight feature for community devices a new one is set up to add all required functions to support OLED displays.
 
 You will need nearly three Arduino Mega 2560 for all Efis and Fcu Buttons and LED's to control. Yes, you can use Portexpander to use one Arduino Mega, but why. The expander is not much cheaper than an additionally used Arduino Mega....
 
