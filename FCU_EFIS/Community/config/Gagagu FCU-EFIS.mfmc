@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ModuleType>Gagagu FCU/EFIS RaspiPico</ModuleType>
-  <ModuleName>Gagagu FCU/EFIS RaspiPico</ModuleName>
+  <ModuleType>Gagagu FCU/EFIS Mega</ModuleType>
+  <ModuleName>Gagagu FCU/EFIS</ModuleName>
   <PowerSavingTime>600</PowerSavingTime>
   <CustomDevice Name="Gagagu FCU/EFIS" CustomType="GAGAGU_FCU-EFIS" Pins="112" Config="">
     <ConfiguredPins>
