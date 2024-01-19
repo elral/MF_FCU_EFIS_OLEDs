@@ -21,7 +21,10 @@ I will try to keep the FW functions on track with Gagagu, but I can not promise 
 ## Installation
 Download the ZIP file from the Releases and extract it into the community folder within your Mobiflight folder.
 It should look like this:
+
 ![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/folder_structure.png)
+
+Connect your Mega or Pico board and start Mobiflight. Flash the firmware and add one custom device. Set the I2C adress to 0x70 or to the adress you have choosen on the portexpander.
 
 ## Wiring
 ![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/FCU_EFIS.png)
