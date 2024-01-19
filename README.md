@@ -1,7 +1,10 @@
-# Mobiflight-A320-Efis-Fcu-Display-with-ESP32
+# Mobiflight-A320-Efis-Fcu-Display
 A320 Efis/Fcu Display for Mobiflight using the new community device API.
 Most is based of the work from Gagagu, see https://github.com/gagagu/Mobiflight-A320-Efis-Fcu-Display-with-ESP32
 Only the integration into a community device is added.
+
+5 OLED's are used for the FCU, and two OLED's are used for left and right EFIS.
+The FW is setup for 1.3" OLED's with 128x64 pixel using the SH1106 chipset.
 
 ## This project ist still in development!
 The goal of this project is to create an A320 Efis and Fcu controlled by Mobiflight.
