@@ -5,7 +5,7 @@
       "Type": "GAGAGU_FCU-EFIS",
       "Author": "Gagagu/elral",
       "URL": "https://github.com",
-      "Version" : "0.0.1"
+      "Version" : "1.0.0"
     },
     "Config": {
       "Pins": [],
@@ -13,13 +13,7 @@
         "Enabled": true,
         "Addresses": [
           "0x70",
-          "0x71",
-          "0x72",
-          "0x73",
-          "0x74",
-          "0x75",
-          "0x76",
-          "0x77"
+          "0x71"
         ]
       }
     },
