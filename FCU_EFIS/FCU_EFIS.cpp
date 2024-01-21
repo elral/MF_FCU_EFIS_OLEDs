@@ -1,7 +1,4 @@
 #include "FCU_EFIS.h"
-#include "allocateMem.h"
-#include "commandmessenger.h"
-#include "Wire.h"
 #include <Fonts/FreeSans18pt7b.h>
 #include <Fonts/FreeSans9pt7b.h>
 #include "Fonts/FreeSans8pt7b.h"
@@ -57,19 +54,12 @@ void FCU_EFIS::attach(uint8_t addrI2C)
     _addrI2C = addrI2C;
     Wire.begin();
     Wire.setClock(400000);
-    if (!FitInMemory(sizeof(Adafruit_SH1106G))) {
+    if (!FitInMemory(sizeof(OLEDInterface))) {
         // Error Message to Connector
         cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
         return;
     }
-    dEfis = new (allocateMemory(sizeof(Adafruit_SH1106G))) Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
-
-    if (!FitInMemory(sizeof(Adafruit_SH1106G))) {
-        // Error Message to Connector
-        cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
-        return;
-    }
-    dFcu = new (allocateMemory(sizeof(Adafruit_SH1106G))) Adafruit_SH1106G(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+    oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SH1106);
     _initialised = true;
 }
 
@@ -82,51 +72,51 @@ void FCU_EFIS::begin()
   // // Efis left
   // //**************************
   setTCAChannel(TCA9548A_CHANNEL_EFIS_LEFT);
-  dEfis->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-  dEfis->display();
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->display();
   updateDisplayEfisLeft();
 
   //**************************
   // Efis right
   //**************************
   setTCAChannel(TCA9548A_CHANNEL_EFIS_RIGHT);
-  dEfis->begin(SCREEN_ADDRESS, true); // Address 0x3C default
-  dEfis->display();
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->display();
   updateDisplayEfisRight();
 
 //**********************************************
 // FCU SPD
 //**********************************************
   setTCAChannel(TCA9548A_CHANNEL_FCU_SPD);
-  dFcu->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
   updateDisplayFcuSpd();
 
 //**********************************************
 // FCU HDG
 //**********************************************
   setTCAChannel(TCA9548A_CHANNEL_FCU_HDG);
-  dFcu->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
   updateDisplayFcuHdg();
 
 //**********************************************
 // FCU HDG and V/S or TRK and FPA.
 //**********************************************
   setTCAChannel(TCA9548A_CHANNEL_FCU_FPA);
-  dFcu->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
   updateDisplayFcuFpa();
 
 //**********************************************
 // FCU ALT
 //**********************************************
   setTCAChannel(TCA9548A_CHANNEL_FCU_ALT);
-  dFcu->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
   updateDisplayFcuAlt();
 
 //**********************************************
 // FCU Vs
 //**********************************************
   setTCAChannel(TCA9548A_CHANNEL_FCU_VS);
-  dFcu->begin(SCREEN_ADDRESS, true); // Address 0x3C default
+  oled->begin(SCREEN_ADDRESS, true); // Address 0x3C default
   updateDisplayFcuVs();      
 }
 
@@ -305,36 +295,36 @@ void FCU_EFIS::updateDisplayEfisLeft(void)
 {
   setTCAChannel(TCA9548A_CHANNEL_EFIS_LEFT);
  // Clear the buffer
-  dEfis->clearDisplay();
-  dEfis->setTextColor(SSD1306_WHITE);
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
   if(efisLeftBaroMode == 2 ||efisLeftBaroMode == 3){
-       dEfis->setFont(&DSEG7Classic_Regular22pt7b);
-       dEfis->setCursor(10,60);             
-       dEfis->println("5td");
+       oled->setFont(&DSEG7Classic_Regular22pt7b);
+       oled->setCursor(10,60);             
+       oled->println("5td");
   }else{
     if(efisLeftBaroMode == 0){
-      dEfis->setFont(&FreeSans9pt7b);
-      dEfis->setTextSize(1);             
-      dEfis->setCursor(0,15);             
-      dEfis->println("QFE");  
+      oled->setFont(&FreeSans9pt7b);
+      oled->setTextSize(1);             
+      oled->setCursor(0,15);             
+      oled->println("QFE");  
     }else{
-      dEfis->setFont(&FreeSans9pt7b);
-      dEfis->setTextSize(1);             
-      dEfis->setCursor(85,15);             
-      dEfis->println("QNH");
+      oled->setFont(&FreeSans9pt7b);
+      oled->setTextSize(1);             
+      oled->setCursor(85,15);             
+      oled->println("QNH");
     }
     if(efisLeftBaroSelect == 0){
-      dEfis->setFont(&DSEG7Classic_Regular20pt7b);
-      dEfis->setCursor(0,60);             
-      dEfis->println(efisLeftBaroValueHg); 
-      dEfis->fillCircle(64, 60, 2, SSD1306_WHITE);
+      oled->setFont(&DSEG7Classic_Regular20pt7b);
+      oled->setCursor(0,60);             
+      oled->println(efisLeftBaroValueHg); 
+      oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     }else {
-      dEfis->setFont(&DSEG7Classic_Regular20pt7b);
-      dEfis->setCursor(0,60);   
-      dEfis->println(efisLeftBaroValueHpa);
+      oled->setFont(&DSEG7Classic_Regular20pt7b);
+      oled->setCursor(0,60);   
+      oled->println(efisLeftBaroValueHpa);
     }
   }
-  dEfis->display();
+  oled->display();
 
 } //updateDisplayEfisLeft
 
@@ -342,38 +332,38 @@ void FCU_EFIS::updateDisplayEfisRight(void)
 {
   setTCAChannel(TCA9548A_CHANNEL_EFIS_RIGHT);
  // Clear the buffer
-  dEfis->clearDisplay();
-  dEfis->setTextColor(SSD1306_WHITE);
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
 
   if(efisRightBaroMode == 2 || efisRightBaroMode == 3){
-       dEfis->setFont(&DSEG7Classic_Regular22pt7b);
-       dEfis->setCursor(10,60);             
-       dEfis->println("5td");
+       oled->setFont(&DSEG7Classic_Regular22pt7b);
+       oled->setCursor(10,60);             
+       oled->println("5td");
   }else{
     if(efisRightBaroMode == 0){
-      dEfis->setFont(&FreeSans9pt7b);
-      dEfis->setTextSize(1);             
-      dEfis->setCursor(0,15);             
-      dEfis->println("QFE");  
+      oled->setFont(&FreeSans9pt7b);
+      oled->setTextSize(1);             
+      oled->setCursor(0,15);             
+      oled->println("QFE");  
     }else{
-      dEfis->setFont(&FreeSans9pt7b);
-      dEfis->setTextSize(1);             
-      dEfis->setCursor(85,15);             
-      dEfis->println("QNH");
+      oled->setFont(&FreeSans9pt7b);
+      oled->setTextSize(1);             
+      oled->setCursor(85,15);             
+      oled->println("QNH");
     }
     if(efisRightBaroSelect == 0){  // send in ASCII
-      dEfis->setFont(&DSEG7Classic_Regular20pt7b);
-      dEfis->setCursor(0,60);             
-      dEfis->println(efisRightBaroValueHg); 
-      dEfis->fillCircle(64, 60, 2, SSD1306_WHITE);
+      oled->setFont(&DSEG7Classic_Regular20pt7b);
+      oled->setCursor(0,60);             
+      oled->println(efisRightBaroValueHg); 
+      oled->fillCircle(64, 60, 2, SSD1306_WHITE);
     }else {
-      dEfis->setFont(&DSEG7Classic_Regular20pt7b);
-      dEfis->setCursor(0,60);   
-      dEfis->println(efisRightBaroValueHpa);
+      oled->setFont(&DSEG7Classic_Regular20pt7b);
+      oled->setCursor(0,60);   
+      oled->println(efisRightBaroValueHpa);
     }
   }
 
-  dEfis->display();
+  oled->display();
 } //updateDisplayEfisRight
 
 
@@ -384,38 +374,38 @@ void FCU_EFIS::updateDisplayFcuSpd(void)
   setTCAChannel(TCA9548A_CHANNEL_FCU_SPD);
 
   // Clear the buffer
-  dFcu->clearDisplay();
-  dFcu->setTextColor(SSD1306_WHITE);
-  dFcu->setFont(&FreeSans8pt7b);
-  dFcu->setTextSize(1); 
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
+  oled->setFont(&FreeSans8pt7b);
+  oled->setTextSize(1); 
 
   if(fcuSpeedValue[0] == '0')
   {
-    dFcu->setCursor(65,20);       
-    dFcu->println("MACH");
+    oled->setCursor(65,20);       
+    oled->println("MACH");
     if(fcuSpeedValue[3] == 0x00)
     {
       fcuSpeedValue[3] = '0';
     }
   }else{
-    dFcu->setCursor(25,20);             
-    dFcu->println("SPD");
+    oled->setCursor(25,20);             
+    oled->println("SPD");
   }
 
   if(fcuSpeedManagedMode == 1)
   {
-    dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-    dFcu->setCursor(28,55);             
-    dFcu->println("---"); 
-    dFcu->fillCircle(104, 40, 3, SSD1306_WHITE);
+    oled->setFont(&DSEG7Classic_Regular15pt7b);
+    oled->setCursor(28,55);             
+    oled->println("---"); 
+    oled->fillCircle(104, 40, 3, SSD1306_WHITE);
   }
   else{
-    dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-    dFcu->setCursor(28,55);             
-    dFcu->println(fcuSpeedValue); 
+    oled->setFont(&DSEG7Classic_Regular15pt7b);
+    oled->setCursor(28,55);             
+    oled->println(fcuSpeedValue); 
   }
 
-  dFcu->display();
+  oled->display();
 }
 
 
@@ -427,35 +417,35 @@ void FCU_EFIS::updateDisplayFcuHdg(void)
   setTCAChannel(TCA9548A_CHANNEL_FCU_HDG);
 
   // Clear the buffer
-  dFcu->clearDisplay();
-  dFcu->setTextColor(SSD1306_WHITE);        // Draw white text
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);        // Draw white text
 
-  dFcu->setFont(&FreeSans8pt7b);
-  dFcu->setTextSize(1); 
+  oled->setFont(&FreeSans8pt7b);
+  oled->setTextSize(1); 
 
 
   if(fcuTrkMode == 0)
   {
-    dFcu->setCursor(20,20);             
-    dFcu->println("HDG");
+    oled->setCursor(20,20);             
+    oled->println("HDG");
   }else{
-    dFcu->setCursor(60,20);       
-    dFcu->println("TRK");
+    oled->setCursor(60,20);       
+    oled->println("TRK");
   }
 
-  dFcu->setCursor(95,20);       
-  dFcu->println("LAT");
+  oled->setCursor(95,20);       
+  oled->println("LAT");
 
   if(fcuHdgManagedMode == 1)
   {
-    dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-    dFcu->setCursor(28,55);             
-    dFcu->println("---"); 
-    dFcu->fillCircle(104, 40, 3, SSD1306_WHITE);
+    oled->setFont(&DSEG7Classic_Regular15pt7b);
+    oled->setCursor(28,55);             
+    oled->println("---"); 
+    oled->fillCircle(104, 40, 3, SSD1306_WHITE);
   }
   else{
-    dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-    dFcu->setCursor(28,55);   
+    oled->setFont(&DSEG7Classic_Regular15pt7b);
+    oled->setCursor(28,55);   
  
     if(fcuHdgValue[1]==0x00)
     {
@@ -474,10 +464,10 @@ void FCU_EFIS::updateDisplayFcuHdg(void)
         strHdgValue[2]=fcuHdgValue[2];
       }      
     }
-    dFcu->println(strHdgValue); 
+    oled->println(strHdgValue); 
   }
 
-  dFcu->display();
+  oled->display();
 }
 
 void FCU_EFIS::updateDisplayFcuFpa(void)
@@ -485,26 +475,26 @@ void FCU_EFIS::updateDisplayFcuFpa(void)
   setTCAChannel(TCA9548A_CHANNEL_FCU_FPA);
 
   // Clear the buffer
-  dFcu->clearDisplay();
-  dFcu->setTextColor(SSD1306_WHITE);
-  dFcu->setFont(&FreeSans8pt7b);
-  dFcu->setTextSize(1); 
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
+  oled->setFont(&FreeSans8pt7b);
+  oled->setTextSize(1); 
 
   if(fcuTrkMode == 0)
   {
-    dFcu->setCursor(30,30);             
-    dFcu->println("HDG");
+    oled->setCursor(30,30);             
+    oled->println("HDG");
 
-    dFcu->setCursor(74,30);       
-    dFcu->println("V/S");
+    oled->setCursor(74,30);       
+    oled->println("V/S");
   }else{
-    dFcu->setCursor(30,45);             
-    dFcu->println("TRK");
+    oled->setCursor(30,45);             
+    oled->println("TRK");
 
-    dFcu->setCursor(74,45);       
-    dFcu->println("FPA");
+    oled->setCursor(74,45);       
+    oled->println("FPA");
   }
-  dFcu->display();
+  oled->display();
 }
 
 void FCU_EFIS::updateDisplayFcuAlt(void)
@@ -513,20 +503,20 @@ void FCU_EFIS::updateDisplayFcuAlt(void)
 
   setTCAChannel(TCA9548A_CHANNEL_FCU_ALT);
   // Clear the buffer
-  dFcu->clearDisplay();
-  dFcu->setTextColor(SSD1306_WHITE);
-  dFcu->setFont(&FreeSans8pt7b);
-  dFcu->setTextSize(1); 
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
+  oled->setFont(&FreeSans8pt7b);
+  oled->setTextSize(1); 
 
-  dFcu->setCursor(52,20);             
-  dFcu->print("ALT");
+  oled->setCursor(52,20);             
+  oled->print("ALT");
 
-  dFcu->setCursor(94,20);   
-  dFcu->print("LVL");
-  dFcu->print("/");
+  oled->setCursor(94,20);   
+  oled->print("LVL");
+  oled->print("/");
 
-  dFcu->drawFastVLine(82, 15, 5, SSD1306_WHITE);
-  dFcu->drawFastHLine(82, 15, 10, SSD1306_WHITE);
+  oled->drawFastVLine(82, 15, 5, SSD1306_WHITE);
+  oled->drawFastHLine(82, 15, 10, SSD1306_WHITE);
 
   if(fcuAltValue[3] == 0x00)
   {
@@ -552,16 +542,16 @@ void FCU_EFIS::updateDisplayFcuAlt(void)
     }      
   }
 
-  dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-  dFcu->setCursor(0,55);             
-  dFcu->print(strAltValue); 
+  oled->setFont(&DSEG7Classic_Regular15pt7b);
+  oled->setCursor(0,55);             
+  oled->print(strAltValue); 
   
   if(fcuAltManagedMode == 1)
   {
-    dFcu->fillCircle(124, 39, 3, SSD1306_WHITE);
+    oled->fillCircle(124, 39, 3, SSD1306_WHITE);
   }
 
-   dFcu->display();
+   oled->display();
 } //updateDisplayFcuAlt
 
 
@@ -572,53 +562,53 @@ void FCU_EFIS::updateDisplayFcuVs(void)
   setTCAChannel(TCA9548A_CHANNEL_FCU_VS);
 
   // Clear the buffer
-  dFcu->clearDisplay();
-  dFcu->setTextColor(SSD1306_WHITE);
-  dFcu->setFont(&FreeSans8pt7b);
-  dFcu->setTextSize(1); 
+  oled->clearDisplay();
+  oled->setTextColor(SSD1306_WHITE);
+  oled->setFont(&FreeSans8pt7b);
+  oled->setTextSize(1); 
 
-  dFcu->setCursor(2,20);             
-  dFcu->print("CH");
+  oled->setCursor(2,20);             
+  oled->print("CH");
 
   if(fcuTrkMode == 0)
   {
-    dFcu->setCursor(40,20);   
-    dFcu->print("V/S");
+    oled->setCursor(40,20);   
+    oled->print("V/S");
   }else{
-    dFcu->setCursor(86,20);   
-    dFcu->print("FPA");
+    oled->setCursor(86,20);   
+    oled->print("FPA");
   }
 
-  dFcu->drawFastHLine(26, 15, 10, SSD1306_WHITE);
-  dFcu->drawFastVLine(36, 15, 5, SSD1306_WHITE);
+  oled->drawFastHLine(26, 15, 10, SSD1306_WHITE);
+  oled->drawFastVLine(36, 15, 5, SSD1306_WHITE);
 
   if(fcuVsManagedMode == 1)
   {
-    dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-    dFcu->setCursor(0,55);   
-    dFcu->print("-----"); 
+    oled->setFont(&DSEG7Classic_Regular15pt7b);
+    oled->setCursor(0,55);   
+    oled->print("-----"); 
   }else{
     if(fcuTrkMode == 0)
     {
       if(fcuVsValue[1]==0x00){
-          dFcu->setFont(&FreeSans18pt7b);
-          dFcu->setCursor(0,50);   
-          dFcu->print("+"); 
+          oled->setFont(&FreeSans18pt7b);
+          oled->setCursor(0,50);   
+          oled->print("+"); 
           
           strVrValue[0]='0';
           strVrValue[1]='0';
           strVrValue[2]='0';
           strVrValue[3]='0';
 
-          dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-          dFcu->setCursor(24,55);   
-          dFcu->print(strVrValue); 
+          oled->setFont(&DSEG7Classic_Regular15pt7b);
+          oled->setCursor(24,55);   
+          oled->print(strVrValue); 
       }else{
         if(fcuVsValue[0]=='-')
         {
-          dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-          dFcu->setCursor(0,55);   
-          dFcu->print("-"); 
+          oled->setFont(&DSEG7Classic_Regular15pt7b);
+          oled->setCursor(0,55);   
+          oled->print("-"); 
 
           if(fcuVsValue[4]==0x00){
             strVrValue[0]='0';
@@ -631,11 +621,11 @@ void FCU_EFIS::updateDisplayFcuVs(void)
             strVrValue[2]=fcuVsValue[3];
             strVrValue[3]=fcuVsValue[4];      
           }
-          dFcu->print(strVrValue); 
+          oled->print(strVrValue); 
         }else{
-          dFcu->setFont(&FreeSans18pt7b);
-          dFcu->setCursor(0,50);   
-          dFcu->print("+"); 
+          oled->setFont(&FreeSans18pt7b);
+          oled->setCursor(0,50);   
+          oled->print("+"); 
           
           if(fcuVsValue[3]==0x00){
             strVrValue[0]='0';
@@ -649,16 +639,16 @@ void FCU_EFIS::updateDisplayFcuVs(void)
             strVrValue[3]=fcuVsValue[3];      
           }
 
-          dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-          dFcu->setCursor(24,55);   
-          dFcu->print(strVrValue); 
+          oled->setFont(&DSEG7Classic_Regular15pt7b);
+          oled->setCursor(24,55);   
+          oled->print(strVrValue); 
         }
       }
     }else{
       if(fcuVsValueFpa[0]=='-')
        {
-        dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-        dFcu->setCursor(0,55);  
+        oled->setFont(&DSEG7Classic_Regular15pt7b);
+        oled->setCursor(0,55);  
 
         if(fcuVsValueFpa[2]==0x00)
         {
@@ -666,11 +656,11 @@ void FCU_EFIS::updateDisplayFcuVs(void)
         }else{
           strVrValue=fcuVsValueFpa;
         }       
-        dFcu->print(strVrValue);   
+        oled->print(strVrValue);   
       } else{
-        dFcu->setFont(&FreeSans18pt7b);
-        dFcu->setCursor(0,50);   
-        dFcu->print("+");    
+        oled->setFont(&FreeSans18pt7b);
+        oled->setCursor(0,50);   
+        oled->print("+");    
 
         if(fcuVsValueFpa=="0")
         {
@@ -687,12 +677,12 @@ void FCU_EFIS::updateDisplayFcuVs(void)
           }
         }
 
-        dFcu->setFont(&DSEG7Classic_Regular15pt7b);
-        dFcu->setCursor(24,55);  
-        dFcu->print(strVrValue);             
+        oled->setFont(&DSEG7Classic_Regular15pt7b);
+        oled->setCursor(24,55);  
+        oled->print(strVrValue);             
       }
    
     }
   }
-  dFcu->display();
+  oled->display();
 }
