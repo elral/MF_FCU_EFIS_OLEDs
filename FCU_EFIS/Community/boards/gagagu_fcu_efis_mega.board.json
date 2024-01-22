@@ -45,10 +45,10 @@
         "GAGAGU_FCU-EFIS"
       ],
       "Community": {
-        "Project": "Gagagu_FCU_EFIS",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
+        "Project": "Gagagu FCU_EFIS",
+        "Website": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Docs": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Support": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs"
       }
     },
     "ModuleLimits": {
