@@ -20,17 +20,17 @@
       "FirmwareBaseName": "gagagu_fcu_efis_raspberrypico",
       "FirmwareExtension": "uf2",
       "FriendlyName": "Gagagu FCU-EFIS RaspiPico",
-      "LatestFirmwareVersion": "2.5.0",
+      "LatestFirmwareVersion": "0.9.0",
       "MobiFlightType": "Gagagu FCU/EFIS RaspiPico",
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",
       "CustomDeviceTypes": [
         "GAGAGU_FCU-EFIS"
       ],
       "Community": {
-        "Project": "Gagagu_FCU_EFIS",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
+        "Project": "Gagagu FCU_EFIS",
+        "Website": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Docs": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Support": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs"
       }
     },
     "ModuleLimits": {

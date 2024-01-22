@@ -37,7 +37,7 @@
       "DelayAfterFirmwareUpdate": 0,
       "FirmwareBaseName": "gagagu_fcu_efis_mega",
       "FirmwareExtension": "hex",
-      "LatestFirmwareVersion": "2.5.0",
+      "LatestFirmwareVersion": "0.9.0",
       "FriendlyName": "Gagagu FCU-EFIS Mega",
       "MobiFlightType": "Gagagu FCU/EFIS Mega",
       "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
@@ -45,10 +45,10 @@
         "GAGAGU_FCU-EFIS"
       ],
       "Community": {
-        "Project": "Gagagu_FCU_EFIS",
-        "Website": "https://YourWebsite.com",
-        "Docs": "https://YourWebsite.com",
-        "Support": "https://YourWebsite.com"
+        "Project": "Gagagu FCU_EFIS",
+        "Website": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Docs": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
+        "Support": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs"
       }
     },
     "ModuleLimits": {
