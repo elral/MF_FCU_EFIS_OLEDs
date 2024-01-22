@@ -19,7 +19,7 @@
       "CanResetBoard": true,
       "FirmwareBaseName": "gagagu_fcu_efis_raspberrypico",
       "FirmwareExtension": "uf2",
-      "FriendlyName": "Gagagu FCU/EFIS RaspiPico",
+      "FriendlyName": "Gagagu FCU-EFIS RaspiPico",
       "LatestFirmwareVersion": "0.9.0",
       "MobiFlightType": "Gagagu FCU/EFIS RaspiPico",
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",

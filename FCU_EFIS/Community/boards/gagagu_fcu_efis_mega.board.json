@@ -38,7 +38,7 @@
       "FirmwareBaseName": "gagagu_fcu_efis_mega",
       "FirmwareExtension": "hex",
       "LatestFirmwareVersion": "0.9.0",
-      "FriendlyName": "Gagagu FCU/EFIS Mega",
+      "FriendlyName": "Gagagu FCU-EFIS Mega",
       "MobiFlightType": "Gagagu FCU/EFIS Mega",
       "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
       "CustomDeviceTypes": [

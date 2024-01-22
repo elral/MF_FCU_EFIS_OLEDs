@@ -1,14 +1,7 @@
 #pragma once
 
 #include "Arduino.h"
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
-#include <Adafruit_SH110X.h>
-
-#define SCREEN_WIDTH 128    // OLED display width, in pixels
-#define SCREEN_HEIGHT 64    // OLED display height, in pixels
-#define OLED_RESET     -1   // Reset pin # (or -1 if sharing Arduino reset pin)
-#define SCREEN_ADDRESS 0x3c // address of the displays. All displays uses the same address
+#include "OLEDInterface.h"
 
 // address of the multiplexer to change the channels
 #define TCA9548A_I2C_ADDRESS  0x70
@@ -33,10 +26,9 @@ public:
     void update();
 
 private:
-    bool    _initialised;
-    uint8_t _addrI2C;
-    Adafruit_SH1106G *dEfis;
-    Adafruit_SH1106G *dFcu;
+    bool          _initialised;
+    uint8_t       _addrI2C;
+    OLEDInterface *oled;
 
     void setTCAChannel(byte i);
     void updateDisplayEfisLeft(void);
