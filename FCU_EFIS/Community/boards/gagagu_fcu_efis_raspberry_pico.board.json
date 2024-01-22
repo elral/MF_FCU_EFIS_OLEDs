@@ -5,8 +5,8 @@
       "VerificationFileName": "INFO_UF2.TXT"
     },
     "Connection": {
-      "ConnectionDelay": 1250,
-      "DelayAfterFirmwareUpdate": 1250,
+      "ConnectionDelay": 2000,
+      "DelayAfterFirmwareUpdate": 2000,
       "DtrEnable": true,
       "EEPROMSize": 1496,
       "ExtraConnectionRetry": false,
