@@ -1,7 +1,7 @@
 {
     "$schema": "./mfdevice.schema.json",
     "Info": {
-      "Label": "Gagagu FCU/EFIS",
+      "Label": "Gagagu FCU-EFIS",
       "Type": "GAGAGU_FCU-EFIS",
       "Author": "Gagagu/elral",
       "URL": "https://github.com",

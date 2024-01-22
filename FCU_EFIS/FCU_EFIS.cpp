@@ -59,7 +59,11 @@ void FCU_EFIS::attach(uint8_t addrI2C)
         cmdMessenger.sendCmd(kStatus, F("Custom Device does not fit in Memory"));
         return;
     }
-    oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SH1106);
+    if (_addrI2C & 0x01) {
+        oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SSD1306);
+    } else {
+        oled = new (allocateMemory(sizeof(OLEDInterface))) OLEDInterface(SH1106);
+    }
     _initialised = true;
 }
 
