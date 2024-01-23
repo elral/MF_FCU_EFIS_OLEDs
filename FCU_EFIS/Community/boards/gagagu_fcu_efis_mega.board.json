@@ -7,10 +7,10 @@
       "Timeout": 15000
     },
     "Connection": {
-      "ConnectionDelay": 1250,
+      "ConnectionDelay": 2000,
       "ExtraConnectionRetry": false,
       "ForceResetOnFirmwareUpdate": false,
-      "DelayAfterFirmwareUpdate": 0,
+      "DelayAfterFirmwareUpdate": 2000,
       "DtrEnable": true,
       "MessageSize": 90,
       "EEPROMSize": 1496
