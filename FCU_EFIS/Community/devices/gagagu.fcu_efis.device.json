@@ -5,7 +5,7 @@
       "Type": "GAGAGU_FCU-EFIS",
       "Author": "Gagagu/elral",
       "URL": "https://github.com",
-      "Version" : "1.0.0"
+      "Version" : "1.0.1"
     },
     "Config": {
       "Pins": [],
