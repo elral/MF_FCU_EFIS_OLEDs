@@ -107,7 +107,17 @@
         "id": 17,
         "label": "Fcu VS Managed",
         "description": "$ 0 = No; 1 = Yes"
-      } 
+      },	  
+	    {
+        "id": 18,
+        "label": "Speed/Mach Mode",
+        "description": "$ 0 = Speed Mode; 1 = Mach mode"
+      },	  
+	    {
+        "id": 19,
+        "label": "Light Test",
+        "description": "$ 0 = Light Test OFF; 1 = Light Test ON"
+      }
     ]
   }
   

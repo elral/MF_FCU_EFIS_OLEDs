@@ -49,7 +49,14 @@
         "Website": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
         "Docs": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs",
         "Support": "https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs"
-      }
+      },
+      "DeviceConfigs": [
+        {
+          "Name": "FCU/EFIS Display",
+          "Description": "FCU and EFIS display with 7 Oled's",
+          "File": "Gagagu FCU-EFIS.mfmc"
+        }
+      ]
     },
     "ModuleLimits": {
       "MaxAnalogInputs": 16,
