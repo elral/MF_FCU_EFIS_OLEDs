@@ -20,7 +20,7 @@
       "FirmwareBaseName": "gagagu_fcu_efis_raspberrypico",
       "FirmwareExtension": "uf2",
       "FriendlyName": "Elral Gagagu FCU-EFIS RaspiPico",
-      "LatestFirmwareVersion": "0.9.1",
+      "LatestFirmwareVersion": "0.9.2",
       "MobiFlightType": "Gagagu FCU/EFIS RaspiPico",
       "ResetFirmwareFile": "reset.raspberry_pico_flash_nuke.uf2",
       "CustomDeviceTypes": [
