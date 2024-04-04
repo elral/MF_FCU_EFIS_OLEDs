@@ -11,7 +11,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="0" value=";$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="0" value=";$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -26,7 +26,7 @@
           <transformation active="False" expression="$" />
           <comparison active="True" value="1000" operand="&lt;" ifValue="'0'+$" elseValue="$" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="1" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="1" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -41,7 +41,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="2" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="2" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -55,7 +55,7 @@
         <modifiers>
           <comparison active="True" value="0" operand="=" ifValue="1" elseValue="2" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="3" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="3" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -69,7 +69,7 @@
         <modifiers>
           <comparison active="True" value="100" operand="&lt;" ifValue="0.$" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="8" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="8" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -84,7 +84,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="2" operand="=" ifValue="1" elseValue="0" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="9" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="9" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -99,7 +99,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="100" operand="&lt;" ifValue="'0'+$" elseValue="$" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="10" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="10" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -114,7 +114,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="2" operand="=" ifValue="1" elseValue="0" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="11" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="11" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -129,7 +129,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="12" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="12" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -141,7 +141,7 @@
         <source type="SimConnect" VarType="CODE" Value="(L:FNX2PLD_fcuAlt, Feet)" UUID="a7c09623-b340-441c-9087-4bbec9b41bc4" />
         <test type="Float" value="12350" />
         <modifiers />
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="13" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="13" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -156,7 +156,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="2" operand="=" ifValue="1" elseValue="0" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="14" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="14" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -171,7 +171,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="" operand="&lt;" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="15" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="15" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -186,7 +186,7 @@
           <transformation active="False" expression="$" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="17" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="17" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -201,7 +201,7 @@
           <transformation active="True" expression="Round($,2)" />
           <comparison active="False" value="" operand="" ifValue="" elseValue="" />
         </modifiers>
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="16" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="16" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -213,7 +213,7 @@
         <source type="SimConnect" VarType="CODE" Value="(L:I_FCU_MACH_MODE)" UUID="cf9c73a0-ab34-455b-866d-f47c09d19336" />
         <test type="Float" value="1" />
         <modifiers />
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="18" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="18" value="$" />
         <preconditions />
         <configrefs />
       </settings>
@@ -225,7 +225,7 @@
         <source type="SimConnect" VarType="CODE" Value="(L:I_OH_APU_AUTOEXTING_TEST_L)" UUID="030e2291-3306-4092-b8a1-7b42f0f1f918" />
         <test type="Float" value="1" />
         <modifiers />
-        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-84B-7DF" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="19" value="$" />
+        <display type="CustomDevice" serial="Gagagu FCU-EFIS/ SN-397-88A" trigger="normal" customType="" customName="Gagagu FCU-EFIS" messageType="19" value="$" />
         <preconditions />
         <configrefs />
       </settings>
