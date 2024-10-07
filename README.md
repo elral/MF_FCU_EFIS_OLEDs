@@ -22,10 +22,18 @@ I will try to keep the FW functions on track with Gagagu, but I can not promise 
 Download the ZIP file from the Releases and extract it into the community folder within your Mobiflight folder.
 It should look like this:
 
-![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/folder_structure.png)
+![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/folder_structure_new.png)
+
+** IMPORTANT **
+Until version 0.9.2 the folder name within the zip file was `Elral_FCU_EFIS`, now the folder name is `Elral`.
+If you have already installed version 0.9.2 or below, please delete the folder `Elral_FCU_EFIS`.
 
 Connect your Mega or Pico board and start Mobiflight. Flash the firmware and add one custom device. Set the I2C adress to 0x70/0x71 or to the adress you have choosen on the portexpander.
 Even I2C addresses support OLED's with SH1106G driver, odd I2C addresses support OLED's with SSD1306 driver.
+
+** IMPORTANT **
+Up to now the connector reports a timeout error when uploading the firmware. It's under investigation why this happens.
+The firmware got uploaded, it might be that you have to restart the connector if still a compatible board is shown.
 
 ## Wiring
 ![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/FCU_EFIS.png)
