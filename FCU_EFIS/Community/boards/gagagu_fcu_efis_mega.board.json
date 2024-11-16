@@ -6,7 +6,7 @@
       "115200"
     ],
     "Programmer": "wiring",
-    "Timeout": 25000
+    "Timeout": 35000
   },
   "Connection": {
     "ConnectionDelay": 2000,
@@ -16,7 +16,7 @@
     "DtrEnable": true,
     "MessageSize": 90,
     "EEPROMSize": 1496,
-    "TimeoutForFirmwareUpdate": 25000
+    "TimeoutForFirmwareUpdate": 35000
   },
   "HardwareIds": [
     "^VID_2341&PID_0010",
@@ -38,9 +38,9 @@
     "CanInstallFirmware": true,
     "CanResetBoard": true,
     "DelayAfterFirmwareUpdate": 0,
-    "FirmwareBaseName": "gagagu_fcu_efis_mega",
+    "FirmwareBaseName": "elral_gagagu_fcu_efis_mega",
     "FirmwareExtension": "hex",
-    "LatestFirmwareVersion": "0.9.2",
+    "LatestFirmwareVersion": "1.0.0",
     "FriendlyName": "Elral Gagagu FCU-EFIS Mega",
     "MobiFlightType": "Gagagu FCU/EFIS Mega",
     "ResetFirmwareFile": "reset.arduino_mega_1_0_2.hex",
