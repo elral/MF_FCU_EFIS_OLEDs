@@ -33,3 +33,8 @@ Even I2C addresses support OLED's with SH1106G driver, odd I2C addresses support
 
 ## Wiring
 ![alt_text](https://github.com/elral/MobiFlight-FCU_EFIS_OLEDs/blob/main/documents/FCU_EFIS.png)
+
+### Important note:
+If you set the I2C address to 0x71 then you need to change the Multiplexer's address too. 
+This is done by connecting the A0 PIN to the 3V3 on the Arduino board. 
+There is no need to change anything if you are using the 0x70 address though, since this is the default address of the TCA9548A board.
